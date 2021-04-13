@@ -17,6 +17,7 @@ public class NotificationsFragment extends Fragment {
 
     RecyclerView recyclerView;
     String[] strings = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         recyclerView = new RecyclerView(getContext());
@@ -25,26 +26,34 @@ public class NotificationsFragment extends Fragment {
         recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));
         return recyclerView;
     }
+
     public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         private String[] dataSource;
+
         public MyAdapter(String[] dataArgs) {
             dataSource = dataArgs;
         }
+
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             TextView view = (TextView) LayoutInflater.from(parent.getContext()).inflate(R.layout.my_text_view, parent, false);
-            return new MyViewHolder(view); }
+            return new MyViewHolder(view);
+        }
+
         @Override
         public void onBindViewHolder(MyViewHolder holder, int position) {
             holder.textView.setText(dataSource[position]);
         }
+
         @Override
         public int getItemCount() {
             return dataSource.length;
         }
     }
+
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView textView;
+
         public MyViewHolder(View itemView) {
             super(itemView);
             textView = (TextView) itemView;
