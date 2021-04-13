@@ -37,7 +37,7 @@ public class WeatherFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_weather, container, false);
 
         // Inflate the layout for this fragment
-        executor.execute(()-> {
+        executor.execute(() -> {
 
             //SystemClock.sleep(1000);
             String city = getArguments().getString("city");
@@ -54,7 +54,7 @@ public class WeatherFragment extends Fragment {
                             }.getType()
                     );
                     Object temperature = fromJson.get("temperature");
-                    root.post(()->
+                    root.post(() ->
                     {
 
                         TextView textView = root.findViewById(R.id.textView);
@@ -64,7 +64,7 @@ public class WeatherFragment extends Fragment {
                 }
             } catch (IOException e) {
                 e.printStackTrace();
-                root.post(()->
+                root.post(() ->
                 {
 
                     TextView textView = root.findViewById(R.id.textView);
@@ -74,12 +74,7 @@ public class WeatherFragment extends Fragment {
             }
 
 
-
         });
-
-
-
-
 
 
         return root;
