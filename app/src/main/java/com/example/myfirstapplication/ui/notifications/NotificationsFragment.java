@@ -61,9 +61,14 @@ public class NotificationsFragment extends Fragment {
             textView = (TextView) itemView;
             textView.setOnClickListener(v -> {
                         int itemPosition = getAdapterPosition();
+                        String city = strings[itemPosition];
                         System.out.println(itemPosition);
                         NavController navController = Navigation.findNavController(textView);
-                        navController.navigate(R.id.action_navigation_notifications_to_weatherFragment);
+
+                        Bundle bundle = new Bundle();
+                        bundle.putString("city", city);
+
+                        navController.navigate(R.id.action_navigation_notifications_to_weatherFragment, bundle);
                     }
             );
         }
