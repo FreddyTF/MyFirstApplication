@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,7 +18,7 @@ import com.example.myfirstapplication.R;
 public class NotificationsFragment extends Fragment {
 
     RecyclerView recyclerView;
-    String[] strings = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+    String[] strings = {"Stuttgart", "Esslingen", "Ludwigsburg", "Freiburg", "Rom", "New York", "Bremen", "Malterdigen", "Monaco", "Sindelfingen"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -60,6 +62,8 @@ public class NotificationsFragment extends Fragment {
             textView.setOnClickListener(v -> {
                         int itemPosition = getAdapterPosition();
                         System.out.println(itemPosition);
+                        NavController navController = Navigation.findNavController(textView);
+                        navController.navigate(R.id.action_navigation_notifications_to_weatherFragment);
                     }
             );
         }
