@@ -44,6 +44,7 @@ public class WeatherFragment extends Fragment {
                 URLConnection urlConnection = new URL("http://10.0.2.2:8080").openConnection();
                 try (InputStream inputStream = urlConnection.getInputStream()) {
                     String result = IOUtils.toString(inputStream, "UTF-8");
+
                 }
             } catch (IOException e) {
                 e.printStackTrace();
