@@ -1,7 +1,6 @@
 package com.example.myfirstapplication;
 
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +39,7 @@ public class WeatherFragment extends Fragment {
         // Inflate the layout for this fragment
         executor.execute(()-> {
 
-            SystemClock.sleep(1000);
+            //SystemClock.sleep(1000);
             String city = getArguments().getString("city");
 
 
