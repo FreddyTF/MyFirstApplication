@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -20,7 +21,12 @@ public class WeatherFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Object city = getArguments().getString("city");
-        return inflater.inflate(R.layout.fragment_weather, container, false);
+        String city = getArguments().getString("city");
+
+        View root = inflater.inflate(R.layout.fragment_weather, container, false);
+
+        TextView textView = root.findViewById(R.id.textView);
+        textView.setText(city);
+        return root;
     }
 }
