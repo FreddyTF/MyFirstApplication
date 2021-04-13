@@ -44,7 +44,7 @@ public class WeatherFragment extends Fragment {
 
 
             try {
-                URLConnection urlConnection = new URL("http://10.0.2.2:8080").openConnection();
+                URLConnection urlConnection = new URL("http://10.0.2.2:8080/?city=" + city).openConnection();
                 try (InputStream inputStream = urlConnection.getInputStream()) {
                     //String result = IOUtils.toString(inputStream, "UTF-8");
 
@@ -73,9 +73,7 @@ public class WeatherFragment extends Fragment {
                 });
             }
 
-
         });
-
 
         return root;
     }
