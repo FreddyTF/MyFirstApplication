@@ -36,7 +36,7 @@ public class WeatherFragment extends Fragment {
         // Inflate the layout for this fragment
         executor.execute(()-> {
 
-            SystemClock.sleep(3000);
+            SystemClock.sleep(1000);
             String city = getArguments().getString("city");
 
 
